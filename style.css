@@ -80,6 +80,7 @@ body {
 }
 
 .atkbar {
+  width: 330px;
     background-color: red;
     background-image: url("atk-bar.png");
     background-size:100% 100%;
@@ -87,12 +88,14 @@ body {
     
 }
 .defbar {
+  width: 360px;
     background-color: blue;
     background-image: url("def-bar.png");
     background-size:100% 100%;
 }
 
 .hpbar {
+  width: 310px;
     background-color: green;
     background-image: url("hp-bar.png");
     background-size:100% 100%;

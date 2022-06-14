@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Health Bars</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+</head>
+
+<body>
+    <img src="pokedex.png" alt="" height="30px">
+    <h1>Attack, Defence & Health Bars for Various Raid Bosses</h1>
+    <a class="btn btn-success btn-gradient" href="javascript:void(0);"
+    onclick="generateScreenshot();"><span>Save</span></a>
+    <div id="wrapper">
+        <div id="atk-bar">
+            <div class="bar atkbar"></div>
+            <div id="atk-circle">
+                <img src="atk.png" alt="">
+            </div>
+           
+        </div>
+        <br>
+        <div id="def-bar">
+            <div class="bar defbar"></div>
+            <div id="def-circle">
+                <img src="def.png" alt="">
+            </div>
+          
+        </div>
+        <br>
+        <div id="hp-bar">
+            <div class="bar hpbar"></div>
+            <div id="hp-circle">
+                <img src="hp.png" alt="">
+              
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <script src="drag.js"></script>
+    <script>
+        function generateScreenshot() {
+
+            setTimeout(() => {
+                html2canvas(document.getElementById('wrapper'), {
+                    logging: true,
+                    profile: true,
+                    scale: 2,
+                    useCORS: true,
+                    backgroundColor: null,
+                }).then(function (canvas) {
+                    var data = canvas.toDataURL('image/png', 0.9)
+                    var src = encodeURI(data);
+
+                    // document.getElementById('screenshot').src = src;
+                    const link = document.createElement('a')
+                    link.href = src
+                    link.download = 'healthbar.png'
+                    document.body.appendChild(link)
+                    link.click()
+                    document.body.removeChild(link)
+                    document.getElementById('size').innerHTML = src.length + ' bytes';
+                });
+            }, 1000);
+        }
+
+
+    </script>
+
+</body>
+
+</html>

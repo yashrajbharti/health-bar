@@ -4,16 +4,16 @@ $('.bar').resizable({
 });
 $( function() {
     $( "#atk-bar" ).draggable({
-      grid: [ 50, 20 ]
+      grid: [ 25,10 ]
     });
   } );
   $( function() {
     $( "#def-bar" ).draggable({
-      grid: [ 50, 20 ]
+      grid: [ 25,10 ]
     });
   } );
   $( function() {
     $( "#hp-bar" ).draggable({
-      grid: [ 50, 20 ]
+      grid: [ 25,10 ]
     });
   } );

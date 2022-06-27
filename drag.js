@@ -3,11 +3,17 @@ $('.bar').resizable({
     maxWidth: 700
 });
 $( function() {
-    $( "#atk-bar" ).draggable();
+    $( "#atk-bar" ).draggable({
+      grid: [ 50, 20 ]
+    });
   } );
   $( function() {
-    $( "#def-bar" ).draggable();
+    $( "#def-bar" ).draggable({
+      grid: [ 50, 20 ]
+    });
   } );
   $( function() {
-    $( "#hp-bar" ).draggable();
+    $( "#hp-bar" ).draggable({
+      grid: [ 50, 20 ]
+    });
   } );
